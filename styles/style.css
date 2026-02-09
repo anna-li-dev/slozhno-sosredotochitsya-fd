@@ -204,6 +204,10 @@
   min-height: var(--page-min-height);
 }
 
+.text-shadow-decore {
+  text-shadow: var(--text-shadow-decor);
+}
+
 @media (width >= 768px) {
   .page {
     gap: var(--page-gap);

@@ -17,6 +17,7 @@
   --weight-decor: normal;
   --card__title--margin-bottom: 10px;
   --text-shadow: 4px 4px 0 var(--accent-color);
+  --text-shadow-decor: 2px 2px 0 var(--accent-color);
   --link-text-shadow: 1.7px 1px 0 var(--accent-color);
   --page-min-height: 668px;
   --color-text-highlight: var(--accent-color);
