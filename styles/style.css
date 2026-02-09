@@ -1,5 +1,315 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: flex;
+  flex-direction: column;
+  gap: var(--page-gap);
+  color: var(--main-text-color);
+  font-family: var(--font), sans-serif;
+  font-weight: normal;
+  font-size: var(--main-font-size, 18px);
+  font-style: normal;
+  line-height: var(--main-line-height, 1.3);
+  background-color: var(--page-bg-color);
+  background-image: var(--page-bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+  min-height: var(--page-min-height);
+  padding: 10px;
+}
+
+.header__rec-indicator {
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.header__rec-indicator::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-inline-start: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--color-text-highlight);
+  border-right: 1px solid var(--color-text-highlight);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--color-text-highlight);
+  border-left: 1px solid var(--color-text-highlight);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  border: 1px solid transparent;
+  padding: 3.5px 13px;
+  color: var(--color-text-highlight);
+  line-height: 1;
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid currentColor;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.headline {
+  color: var(--decoration-text-color);
+  font-weight: bold;
+  font-size: var(--decoration-text-size);
+  line-height: 0.825;
+  text-shadow: var(--text-shadow);
+}
+
+.header__title {
+  justify-self: start;
+  align-self: center;
+}
+
+.title-decor {
+  color: var(--title-decor-color);
+  font-weight: bold;
+  font-size: var(--main-font-size);
+  background-color: var(--accent-color);
+}
+
+.header__description {
+  align-self: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--content-gap);
+  padding: var(--content-padding);
+}
+
+.content__title {
+  color: var(--color-text-highlight);
+  font-size: var(--main-font-size);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--content-gap);
+}
+
+.weight-decor {
+  font-weight: var(--weight-decor);
+}
+
+.card__title {
+  margin-bottom: var(--card__title--margin-bottom);
+}
+
+.link-decor {
+  text-decoration: none;
+  text-shadow: var(--link-text-shadow);
+}
+
+.link-decor:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.link-decor:focus {
+  outline: none;
+}
+
+.link-decor:focus-visible {
+  border: 1px solid currentColor;
+}
+
+.concentration-increase__heading {
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gallery-gap);
+}
+
+.gallery__image {
+  display: block;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: var(--page-min-height);
+}
+
+@media (width >= 768px) {
+  .page {
+    gap: var(--page-gap);
+  }
+
+  .header__rec-indicator {
+    top: 20px;
+    right: 29px;
+  }
+
+  .decorated-zone::after {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::before {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+  }
+
+  .header__title {
+    grid-column: 1/ 3;
+    transform: translateX(-20px);
+  }
+
+  .header__description {
+    grid-column: 2 / 3;
+  }
+
+  .content {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .concentration-decrease__cards {
+    grid-column: 1 / 3;
+  }
+
+  .concentration-increase__cards {
+    grid-column: 2 / 3;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    grid-auto-rows: 1fr;
+  }
+
+  .gallery__title {
+    grid-column: 1 / -1;
+  }
+
+  .gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .gallery__image__sunset {
+    grid-column: 1 / 3;
+  }
+
+  .gallery__image__ice-cream {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
+  .gallery__image__tape {
+    grid-column: 1 / auto;
+    grid-row: 3 / 5;
+  }
+
+  .gallery__image__books {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .gallery__image__street {
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    grid-column: span 2;
+    justify-self: center;
+    align-self: flex-start;
+    transform: none;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .concentration-decrease__cards.cards {
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    gap: 19px;
+  }
 }
