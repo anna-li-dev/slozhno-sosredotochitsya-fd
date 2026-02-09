@@ -83,7 +83,6 @@
 }
 
 .header__theme-menu-button {
-  border: none;
   border: 1px solid transparent;
   padding: 3.5px 13px;
   color: var(--color-text-highlight);
