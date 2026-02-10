@@ -42,5 +42,7 @@ a {
 }
 
 img {
+  object-fit: cover;
+  object-position: center;
   inline-size: 100%;
 }

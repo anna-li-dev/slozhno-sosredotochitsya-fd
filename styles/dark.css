@@ -1,4 +1,14 @@
 :root.theme-dark {
   --page-bg-image: url(../images/cover-image-dark.png);
   --page-bg-color: #000028;
+  --main-text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --decoration-text-color: #db00ff;
+  --button-hover: rgba(255, 0, 112, 0.4);
+  --text-shadow: 4px 4px 0 var(--accent-color);
+  --text-shadow-decor: 2px 2px 0 var(--accent-color);
+  --link-text-shadow: 1.7px 1px 0 var(--accent-color);
+  --color-text-highlight: var(--accent-color);
+  --title-decor-color: var(--page-bg-color);
+  --element-visible: inline;
 }
